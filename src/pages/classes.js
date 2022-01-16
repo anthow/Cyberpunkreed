@@ -13,7 +13,7 @@ const CLassePage = ({ data }) => (
    <article className=" < w-10/12 m-auto  text-white">
        <h1 className="text-5xl font-black text-red-600 mb-20">Les classes</h1>
 
-       <div className="md:space-x-20 flex-wrap flex">
+       <div className="md:space-x-20 m-auto flex-wrap flex">
    {
 
 data.allDatoCmsClasse.edges.map(({ node }) => {
