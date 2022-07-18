@@ -13,8 +13,10 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
-    <ul>
-      <li><a href="#"> Classes</a></li>
+    <ul className="flex space-x-4">
+      <li> <Link to="/classes"> Classes</Link></li>
+      <li> <Link to="/cartes"> Cartes</Link></li>
+
     </ul>
     </nav>
   </header>
