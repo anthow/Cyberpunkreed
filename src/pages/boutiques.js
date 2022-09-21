@@ -3,9 +3,9 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-const CLassePage = ({ data }) => (
+const BoutiquesPage = ({ data }) => (
     
   <Layout>
     <Seo title="Classes" />
@@ -16,12 +16,12 @@ const CLassePage = ({ data }) => (
        <div className="md:grid grid-cols-4">
    {
 
-data.allDatoCmsClasse.edges.map(({ node }) => {
+data.allDatoCmsBoutique.edges.map(({ node }) => {
     return (
         <Link to={node.slug} > 
         <section className="flex mb-10 flex-col space-y-2 items-center">
-            <GatsbyImage image={node.portrait.gatsbyImageData} className="rounded-full" />        
-            <h2 className="text-2xl font-black text-yellow-400">{node.nomDeLaClasse}</h2>
+            <GatsbyImage image={node.image.gatsbyImageData} className="rounded-full" />        
+            <h2 className="text-2xl font-black text-yellow-400">{node.nom}</h2>
             </section>
             </Link>
 
@@ -32,23 +32,20 @@ data.allDatoCmsClasse.edges.map(({ node }) => {
 )
 export const query = graphql`
   {
-    allDatoCmsClasse {
+    allDatoCmsBoutique {
       edges {
         node {
-          nomDeLaClasse
+          nom
           slug
           image {
-            gatsbyImageData
-          }
-          portrait {
-            gatsbyImageData(
-            width: 150
+            gatsbyImageData( width: 150
             height:150)
           }
+        
         }
       }
     }
   }
 `
 
-export default CLassePage
+export default BoutiquesPage
