@@ -29,8 +29,8 @@ const CLassePage  = ({ data })  => (
 )
 
 export const query = graphql`
-query classsePageQuery($url: String){
-  datoCmsClasse(slug: {eq: $url}) {
+query classsePageQuery($slug: String){
+  datoCmsClasse(slug: {eq: $slug}) {
     nomDeLaClasse
     nomDeLaCapacitSpCiale
     dTailCapacitSpCiale

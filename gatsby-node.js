@@ -1,44 +1,68 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+const path = require('path');
 
-// You can delete this file if you're not using it
+exports.createPages = ({ actions, graphql }) => {
+	const { createPage } = actions;
+  const ClasseTemplate = path.resolve(`src/templates/classes.js`);
+  const quartierTemplate = path.resolve ('src/templates/quartier.js');
 
-const path = require(`path`)
+	// Individual classe
+	const classe = graphql(`
+  {
+    allDatoCmsClasse  {
+      edges {
+        node {
+          slug
+        }
+      }
+    }
+  }
+  
+  `).then(result => {
+		if (result.errors) {
+			Promise.reject(result.errors);
+		}
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
-  const histoireTemplate = path.resolve(`src/templates/classes.js`)
-  // Query for markdown nodes to use in creating pages.
-  // You can query for whatever data you want to create pages for e.g.
-  // products, portfolio items, landing pages, etc.
-  // Variables can be added as the second function parameter
-  return graphql(`
-    query classePageQuery ($limit: Int!) {
-      allDatoCmsClasse(limit: $limit) {
+		// Create product pages
+		result.data.allDatoCmsClasse.edges.forEach(({ node }) => {
+			createPage({
+        path: `classes/${node.slug}`,				
+        component: ClasseTemplate,         
+        context: {
+          slug: node.slug,
+        },
+			});
+		});
+	});
+
+	// Formations
+	const quartier = graphql(`
+		{
+			allDatoCmsQuartier  {
         edges {
-          node {
-            slug
-            
+          node  {
+					slug
           }
         }
       }
     }
-  `, { limit: 1000 }).then(result => {
-    if (result.errors) {
-      throw result.errors
-    }
+    
+	`).then(result => {
+		if (result.errors) {
+			Promise.reject(result.errors);
+		}
 
-    // Create article  pages.
-    result.data.allDatoCmsClasse.edges.forEach(({ node }) => {
-      createPage({
-        // Path for this page — required
-        path: `classes/${node.slug}`,
-        component: histoireTemplate  ,
-        context: { url: node.slug},
-      })
-    })
-  })
-}
+		// Create atelier pages
+		result.data.allDatoCmsQuartier.edges.forEach(({ node }) => {
+			createPage({
+        path: `lore/quartiers/${node.slug}`,
+        component: quartierTemplate,
+        context: {slug: node.slug},
+			});
+		});
+	});
+
+
+
+	// Return a Promise which would wait for both the queries to resolve
+	return Promise.all([classe, quartier]);
+};
