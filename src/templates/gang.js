@@ -26,8 +26,8 @@ const CLassePage  = ({ data })  => (
 )
 
 export const query = graphql`
-query QuartierPageQuery($slug: String){
-    datoCmsQuartier(slug: {eq: $slug}) {
+query gangPageQuery($slug: String){
+    datoCmsGang(slug: {eq: $slug}) {
     slug
     description
     nom
