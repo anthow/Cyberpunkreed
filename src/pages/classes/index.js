@@ -19,7 +19,7 @@ const ClassePage = () => (
               <img
                 src={classe.portraitSrc}
                 alt={classe.nomDeLaClasse}
-                className="w-[150px] h-[150px] rounded-full object-cover"
+                className="w-[150px] h-[150px] object-contain"
               />
               <h2 className="text-2xl font-black text-yellow-400">{classe.nomDeLaClasse}</h2>
             </section>

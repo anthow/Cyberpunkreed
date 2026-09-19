@@ -13,7 +13,15 @@ const quartiers = [
     quartierParent: null,
     sousQuartiers: ["kabuki", "northside", "japantown"],
   },
-  { slug: "little-europe", nom: "Little Europe", typeDeZone: "Zone populaire", imageSrc: "/quartiers/placeholder.svg" },
+  {
+    slug: "little-europe",
+    nom: "Little Europe",
+    typeDeZone: "Zone populaire",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>Une enclave où les vieilles familles venues d'Europe après l'effondrement ont recréé un morceau de ce qu'elles avaient perdu : façades en pierre reconstituée, cafés qui refusent de servir en dehors des heures fixées par la tradition, et une méfiance tenace envers tout ce qui vient d'ailleurs. Le quartier vit replié sur lui-même, fier de ses propres règles, et n'hésite pas à rappeler aux visiteurs qu'ici, ce sont eux qui font la loi — pas la police de Night City.</p>",
+  },
   {
     slug: "kabuki",
     nom: "Kabuki",
@@ -44,19 +52,123 @@ const quartiers = [
     description:
       "<p>Le plus ancien des sous-quartiers de Watson, et le plus surveillé. Japantown a gardé une identité propre — façades traditionnelles reconverties, jardins miniatures coincés entre deux immeubles, sanctuaires urbains — sous une présence corpo permanente qui n'a jamais vraiment disparu depuis les premières implantations d'après-guerre. On y respire un calme trompeur : les rues sont plus propres qu'ailleurs à Watson, et c'est précisément ce qui devrait alerter quiconque n'est pas censé s'y trouver.</p>",
   },
-  { slug: "charter-hill", nom: "Charter Hill", typeDeZone: "Zone résidentielle aisée", imageSrc: "/quartiers/placeholder.svg" },
-  { slug: "north-oak", nom: "North Oak", typeDeZone: "Zone résidentielle de luxe", imageSrc: "/quartiers/placeholder.svg" },
-  { slug: "the-glen", nom: "The Glen", typeDeZone: "Zone mixte — politique et résidentielle", imageSrc: "/quartiers/placeholder.svg" },
-  { slug: "wellsprings", nom: "Wellsprings", typeDeZone: "Zone résidentielle", imageSrc: "/quartiers/placeholder.svg" },
-  { slug: "vista-del-rey", nom: "Vista del Rey", typeDeZone: "Zone populaire", imageSrc: "/quartiers/placeholder.svg" },
-  { slug: "arroyo", nom: "Arroyo", typeDeZone: "Zone industrielle", imageSrc: "/quartiers/placeholder.svg" },
-  { slug: "rancho-coronado", nom: "Rancho Coronado", typeDeZone: "Zone résidentielle", imageSrc: "/quartiers/placeholder.svg" },
-  { slug: "coastview", nom: "Coastview", typeDeZone: "Zone abandonnée", imageSrc: "/quartiers/placeholder.svg" },
-  { slug: "west-wind-estate", nom: "West Wind Estate", typeDeZone: "Zone abandonnée", imageSrc: "/quartiers/placeholder.svg" },
-  { slug: "downtown", nom: "Downtown", typeDeZone: "Centre-ville", imageSrc: "/quartiers/placeholder.svg" },
-  { slug: "corpo-plaza", nom: "Corpo Plaza", typeDeZone: "Zone corporatiste", imageSrc: "/quartiers/placeholder.svg" },
-  { slug: "pacifica", nom: "Pacifica", typeDeZone: "Zone abandonnée", imageSrc: "/quartiers/placeholder.svg" },
-  { slug: "combat-zone", nom: "Combat Zone", typeDeZone: "Combat Zone", imageSrc: "/quartiers/placeholder.svg" },
+  {
+    slug: "charter-hill",
+    nom: "Charter Hill",
+    typeDeZone: "Zone résidentielle aisée",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>Un quartier résidentiel fermé, où chaque rue est surveillée par une sécurité privée qui répond plus vite que n'importe quelle patrouille municipale. Les cliniques de chirurgie esthétique et de cyberware haut de gamme y poussent aussi vite que les maisons elles-mêmes, toutes discrètes, toutes hors de prix. On n'entre pas à Charter Hill par hasard : soit on y habite, soit on y est invité, soit on a une très bonne raison d'expliquer pourquoi on y est.</p>",
+  },
+  {
+    slug: "north-oak",
+    nom: "North Oak",
+    typeDeZone: "Zone résidentielle de luxe",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>Le quartier le plus riche de Night City, où les propriétés s'étendent derrière des murs que même les meilleurs grimpeurs évitent d'approcher. Cadres corpos, célébrités et rentiers de troisième génération y cultivent une discrétion absolue — personne ne veut être celui dont le nom apparaît dans un scandale. Ceux qui travaillent ici, jardiniers, gardes, domestiques, savent une chose : ce qu'ils voient à North Oak reste à North Oak.</p>",
+  },
+  {
+    slug: "the-glen",
+    nom: "The Glen",
+    typeDeZone: "Zone mixte — politique et résidentielle",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>Quartier ouvrier construit autour d'anciennes usines pétrochimiques, où les familles vivent encore à l'ombre de cheminées qui ne fument plus depuis des décennies. Les rues sont larges, presque vides le jour, et se remplissent le soir de gangs locaux qui tiennent le quartier avec une loyauté de clan plus qu'avec des armes. On y respecte encore les anciens, on y règle les comptes en famille, et on n'aime pas voir débarquer des étrangers sans y être invité.</p>",
+  },
+  {
+    slug: "wellsprings",
+    nom: "Wellsprings",
+    typeDeZone: "Zone résidentielle",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>Le quartier le plus religieux de Night City, construit autour d'une ancienne église reconvertie en lieu de rassemblement communautaire. Les peintures murales colorées racontent l'histoire de ceux qui ont survécu à la guerre et à la faillite des corpos qui les employaient. La criminalité y est réelle, mais encadrée par des codes que même les flics finissent par respecter : ici, on ne touche pas aux enfants, et on ne trahit pas son quartier.</p>",
+  },
+  {
+    slug: "vista-del-rey",
+    nom: "Vista del Rey",
+    typeDeZone: "Zone populaire",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>Un ancien lotissement pavillonnaire aux couleurs pastel, aujourd'hui vieilli et surpeuplé, où plusieurs générations d'une même famille s'entassent dans des maisons prévues pour une seule. Les jardins ont été transformés en ateliers de mécanique ou en poulaillers de fortune. Vista del Rey vit en autarcie relative, méfiante envers le reste de la ville, et n'hésite pas à fermer ses rues à la circulation quand elle estime ne pas devoir de comptes à qui que ce soit.</p>",
+  },
+  {
+    slug: "arroyo",
+    nom: "Arroyo",
+    typeDeZone: "Zone industrielle",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>Zone industrielle reconvertie en logements de fortune, où d'anciens entrepôts abritent désormais des familles entières derrière des cloisons de fortune. L'air y sent encore le métal et l'huile de moteur, hérité des usines qui employaient jadis la moitié du quartier. Ceux qui y vivent travaillent dur, souvent pour des salaires que la ville d'à côté jugerait indignes, et développent une fierté méthodique à ne devoir leur survie à personne d'autre qu'eux-mêmes.</p>",
+  },
+  {
+    slug: "rancho-coronado",
+    nom: "Rancho Coronado",
+    typeDeZone: "Zone résidentielle",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>Le quartier le plus récent de Santo Domingo, construit sur un ancien complexe militaire désaffecté, où les mégabuildings à bas coût s'alignent avec une régularité presque militaire. Beaucoup de vétérans de la guerre corporatiste s'y sont installés après leur démobilisation, faute de mieux, et continuent d'y vivre selon une discipline qu'ils n'ont jamais vraiment quittée. C'est un des quartiers les plus sûrs de Night City la nuit — et l'un des plus surveillés.</p>",
+  },
+  {
+    slug: "coastview",
+    nom: "Coastview",
+    typeDeZone: "Zone abandonnée",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>D'anciennes résidences balnéaires haut de gamme, construites en prévision d'une clientèle qui n'est jamais venue quand le projet Pacifica s'est effondré. Les façades élégantes tiennent encore debout, rongées par le sel et l'abandon, occupées aujourd'hui par ceux qui ont su s'approprier ce que les corpos ont laissé derrière eux. Vu de loin, ça ressemble presque à ce que ça devait être — de près, plus du tout.</p>",
+  },
+  {
+    slug: "west-wind-estate",
+    nom: "West Wind Estate",
+    typeDeZone: "Zone abandonnée",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>Le dernier quartier résidentiel construit avant que Pacifica ne soit abandonné, à moitié vide depuis toujours. Les immeubles qui devaient accueillir des familles entières n'ont jamais été achevés au-delà du rez-de-chaussée, et ceux qui s'y sont installés ont fait avec ce qu'il y avait : des structures nues, sans façade, ouvertes aux quatre vents et à quiconque a le courage d'y monter.</p>",
+  },
+  {
+    slug: "downtown",
+    nom: "Downtown",
+    typeDeZone: "Centre-ville",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>Le centre névralgique de Night City, où les tours des plus grandes corporations rivalisent de hauteur au-dessus d'une foule qui n'a jamais le temps de lever les yeux. Le jour, c'est une ruche de costumes et de badges d'accès ; la nuit, les mêmes rues appartiennent à ceux qui savent se fondre dans les ombres entre deux halos de sécurité. Rien ne se passe à Downtown sans qu'une corpo, quelque part, ne le sache déjà.</p>",
+  },
+  {
+    slug: "corpo-plaza",
+    nom: "Corpo Plaza",
+    typeDeZone: "Zone corporatiste",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>Le cœur du cœur : l'esplanade où se dressent les sièges des méga-corporations qui font vraiment tourner la ville, chacune dans sa propre tour-forteresse. L'accès est filtré, les patrouilles y sont privées et mieux équipées que la police, et le moindre écart de comportement peut vous valoir une expulsion manu militari avant même d'avoir compris votre erreur. Corpo Plaza n'appartient pas à Night City — Night City appartient un peu à Corpo Plaza.</p>",
+  },
+  {
+    slug: "pacifica",
+    nom: "Pacifica",
+    typeDeZone: "Zone abandonnée",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>Le grand projet inachevé de Night City : un complexe touristique pensé pour rivaliser avec les plus grandes stations du monde, abandonné à mi-construction quand l'argent corpo s'est retiré du jour au lendemain. Les tours à moitié terminées et le centre commercial vide sont devenus un territoire à part, que même la police évite d'arpenter sans renfort. Ceux qui y vivent ont appris à se passer de tout ce que la ville promet ailleurs — eau, électricité, protection — et ça se voit dans leur regard.</p>",
+  },
+  {
+    slug: "combat-zone",
+    nom: "Combat Zone",
+    typeDeZone: "Combat Zone",
+    imageSrc: "/quartiers/placeholder.svg",
+    complet: true,
+    description:
+      "<p>Le nom n'est pas une métaphore : c'est une zone que la municipalité a officiellement classée comme non sécurisée, où les patrouilles ne s'aventurent plus depuis des années. Les immeubles qui tenaient encore debout après la guerre ont fini par s'effondrer d'eux-mêmes, ou ont été rasés par ceux qui s'en servaient comme couverture. On y trouve de tout, à condition de savoir à qui demander et de ne pas poser de questions sur la provenance.</p>",
+  },
 ].map(quartier => ({
   ...quartier,
   description: quartier.description || PLACEHOLDER,

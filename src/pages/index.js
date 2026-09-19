@@ -9,8 +9,8 @@ const cards = [
     to: "/classes",
     title: "Classes",
     text: "Les dix rôles de Night City, leurs backgrounds et la progression de chaque capacité spéciale.",
-    image: "/classes/rockeur.webp",
-    alt: "Portrait du Rockeur",
+    image: "/classes/rockeur-token.png",
+    alt: "Token du Rockeur",
   },
   {
     to: "/cartes",
@@ -55,7 +55,7 @@ const IndexPage = () => (
             to={card.to}
             className="border border-white/20 hover:border-red-600 transition-colors p-6 flex flex-col items-center text-center"
           >
-            <img src={card.image} alt={card.alt} className="w-36 h-36 object-cover rounded-full mb-4 bg-black" />
+            <img src={card.image} alt={card.alt} className="w-36 h-36 object-contain mb-4 bg-black" />
             <h2 className="text-2xl font-black text-yellow-400 mb-3">{card.title}</h2>
             <p className="text-gray-300">{card.text}</p>
           </Link>

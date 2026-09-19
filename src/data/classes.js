@@ -9,7 +9,7 @@ const classes = [
     slug: "rockeur",
     nomDeLaClasse: "Rockeur",
     nomDeLaCapacitSpCiale: "Impact charismatique",
-    portraitSrc: "/classes/rockeur.webp",
+    portraitSrc: "/classes/rockeur-token.png",
     imageSrc: "/classes/rockeur.webp",
     excerpt:
       "Artistes rebelles qui transforment une scène, un discours ou une chanson en arme politique. Impact charismatique mesure qui tu peux remuer, et jusqu'où.",
@@ -37,7 +37,7 @@ const classes = [
     slug: "solo",
     nomDeLaClasse: "Solo",
     nomDeLaCapacitSpCiale: "Conscience de combat",
-    portraitSrc: "/classes/solo.webp",
+    portraitSrc: "/classes/solo-token.png",
     imageSrc: "/classes/solo.webp",
     excerpt:
       "Mercenaires, gardes du corps et tueurs à gages. Conscience de combat donne un pool de points à répartir chaque combat.",
@@ -65,7 +65,7 @@ const classes = [
     slug: "netrunner",
     nomDeLaClasse: "Netrunner",
     nomDeLaCapacitSpCiale: "Interface",
-    portraitSrc: "/classes/netrunner.webp",
+    portraitSrc: "/classes/netrunner-token.png",
     imageSrc: "/classes/netrunner.webp",
     excerpt:
       "Les Netrunners plongent leur esprit dans les architectures numériques. Interface ajoute son rang aux tests de run et détermine le nombre d'actions NET par tour.",
@@ -106,7 +106,7 @@ const classes = [
     slug: "techie",
     nomDeLaClasse: "Techie",
     nomDeLaCapacitSpCiale: "Maker",
-    portraitSrc: "/classes/techie.webp",
+    portraitSrc: "/classes/techie-token.png",
     imageSrc: "/classes/techie.webp",
     excerpt:
       "Bricoleurs, armuriers et génies du rebut. Maker mesure combien d'inventions ou d'améliorations tu peux entretenir.",
@@ -134,7 +134,7 @@ const classes = [
     slug: "medtech",
     nomDeLaClasse: "Medtech",
     nomDeLaCapacitSpCiale: "Médecine",
-    portraitSrc: "/classes/medtech.webp",
+    portraitSrc: "/classes/medtech-token.png",
     imageSrc: "/classes/medtech.webp",
     excerpt:
       "Chirurgiens de rue, ripperdocs et sauveteurs. Médecine couvre pharma, chirurgie, cyberware et cryo.",
@@ -162,7 +162,7 @@ const classes = [
     slug: "media",
     nomDeLaClasse: "Media",
     nomDeLaCapacitSpCiale: "Crédibilité",
-    portraitSrc: "/classes/media.webp",
+    portraitSrc: "/classes/media-token.png",
     imageSrc: "/classes/media.webp",
     excerpt:
       "Journalistes, streamers et chasseurs de vérités. Crédibilité mesure l'audience que tu touches et les portes qu'elle ouvre.",
@@ -190,7 +190,7 @@ const classes = [
     slug: "corporatiste",
     nomDeLaClasse: "Corporatiste",
     nomDeLaCapacitSpCiale: "Teamwork",
-    portraitSrc: "/classes/corporatiste.webp",
+    portraitSrc: "/classes/corporatiste-token.png",
     imageSrc: "/classes/corporatiste.webp",
     excerpt:
       "Cadres, opérateurs et chefs d'équipe. Teamwork te donne des employés qui travaillent même quand tu n'es pas dans la pièce.",
@@ -218,7 +218,7 @@ const classes = [
     slug: "justicier",
     nomDeLaClasse: "Justicier",
     nomDeLaCapacitSpCiale: "Renforts",
-    portraitSrc: "/classes/justicier.jpg",
+    portraitSrc: "/classes/justicier-token.png",
     imageSrc: "/classes/justicier.jpg",
     excerpt:
       "Flics, miliciens et chasseurs de primes. Renforts mesure qui débarque quand tu appelles, et dans combien de temps.",
@@ -246,7 +246,7 @@ const classes = [
     slug: "fixer",
     nomDeLaClasse: "Fixer",
     nomDeLaCapacitSpCiale: "Operator",
-    portraitSrc: "/classes/fixer.webp",
+    portraitSrc: "/classes/fixer-token.png",
     imageSrc: "/classes/fixer.webp",
     excerpt:
       "Intermédiaires, receleurs et faiseurs de deals. Operator mesure tes contacts, tes rabais, et ce que tu peux dénicher.",
@@ -274,7 +274,7 @@ const classes = [
     slug: "nomade",
     nomDeLaClasse: "Nomade",
     nomDeLaCapacitSpCiale: "Moto",
-    portraitSrc: "/classes/nomade.webp",
+    portraitSrc: "/classes/nomade-token.png",
     imageSrc: "/classes/nomade.webp",
     excerpt:
       "Clans de la route, convoyeurs et familles armées. Moto mesure les véhicules et les cousins que tu peux appeler.",
