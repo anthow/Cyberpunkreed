@@ -1,7 +1,7 @@
 import * as React from "react"
-import NcpdLayout from "../../components/ncpd-layout"
-import * as styles from "../../css/ncpd.module.css"
-const { preventionGangs } = require("../../data/ncpd")
+import NcpdLayout from "../../../components/ncpd-layout"
+import * as styles from "../../../css/ncpd.module.css"
+const { preventionGangs } = require("../../../data/ncpd")
 
 const NcpdPreventionPage = () => (
   <NcpdLayout

@@ -1,7 +1,7 @@
 import * as React from "react"
-import NcpdLayout from "../../components/ncpd-layout"
-import * as styles from "../../css/ncpd.module.css"
-const { NCPD_ACCESS_CODE, intranetConfidentiel } = require("../../data/ncpd")
+import NcpdLayout from "../../../components/ncpd-layout"
+import * as styles from "../../../css/ncpd.module.css"
+const { NCPD_ACCESS_CODE, intranetConfidentiel } = require("../../../data/ncpd")
 
 const STORAGE_KEY = "ncpd-intranet"
 

@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import NcpdLayout from "../../components/ncpd-layout"
-import * as styles from "../../css/ncpd.module.css"
-const { ncpdAccueil } = require("../../data/ncpd")
+import NcpdLayout from "../../../components/ncpd-layout"
+import * as styles from "../../../css/ncpd.module.css"
+const { ncpdAccueil } = require("../../../data/ncpd")
 
 const NcpdHomePage = () => (
   <NcpdLayout title="Accueil" description="Portail public du Night City Police Department.">

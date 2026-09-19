@@ -1,6 +1,6 @@
 import * as React from "react"
-import NcpdLayout from "../../components/ncpd-layout"
-import * as styles from "../../css/ncpd.module.css"
+import NcpdLayout from "../../../components/ncpd-layout"
+import * as styles from "../../../css/ncpd.module.css"
 
 const NcpdAvisPage = () => (
   <NcpdLayout title="Avis de recherche" description="Avis de recherche publics du NCPD.">
