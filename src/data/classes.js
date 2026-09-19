@@ -9,8 +9,8 @@ const classes = [
     slug: "rockeur",
     nomDeLaClasse: "Rockeur",
     nomDeLaCapacitSpCiale: "Impact charismatique",
-    portraitSrc: "/classes/rockeur.svg",
-    imageSrc: "/classes/rockeur.svg",
+    portraitSrc: "/classes/rockeur.webp",
+    imageSrc: "/classes/rockeur.webp",
     excerpt:
       "Artistes rebelles qui transforment une scène, un discours ou une chanson en arme politique. Impact charismatique mesure qui tu peux remuer, et jusqu'où.",
     background: `<p>Les Rockeurs sont les bardes du futur sombre : punks, chanteurs, poètes de rue et agitateurices qui transforment une foule en arme. Là où un Solo sort un fusil, le Rockeur sort une riff, un discours, un visage que toute la rue reconnaît.</p>
@@ -37,8 +37,8 @@ const classes = [
     slug: "solo",
     nomDeLaClasse: "Solo",
     nomDeLaCapacitSpCiale: "Conscience de combat",
-    portraitSrc: "/classes/solo.svg",
-    imageSrc: "/classes/solo.svg",
+    portraitSrc: "/classes/solo.webp",
+    imageSrc: "/classes/solo.webp",
     excerpt:
       "Mercenaires, gardes du corps et tueurs à gages. Conscience de combat donne un pool de points à répartir chaque combat.",
     background: `<p>Les Solos sont la violence professionnelle de Night City : vétérans de la 4<sup>e</sup> Guerre, ex-milices corpo, rōnin de la Zone de Combat. Ils ne « jouent » pas les durs. Ils facturent le fait de rester debout quand tout le monde est déjà à terre.</p>
@@ -65,8 +65,8 @@ const classes = [
     slug: "netrunner",
     nomDeLaClasse: "Netrunner",
     nomDeLaCapacitSpCiale: "Interface",
-    portraitSrc: "/classes/netrunner.svg",
-    imageSrc: "/classes/netrunner.svg",
+    portraitSrc: "/classes/netrunner.webp",
+    imageSrc: "/classes/netrunner.webp",
     excerpt:
       "Les Netrunners plongent leur esprit dans les architectures numériques. Interface ajoute son rang aux tests de run et détermine le nombre d'actions NET par tour.",
     background: `<p>Les Netrunners sont les cowboys du Net : des spécialistes qui plongent leur esprit dans les architectures numériques avec une cyberdeck, des câbles d'interface et, trop souvent, un café trop froid. Là où un Solo ouvre une porte à coups de canon, le Netrunner l'ouvre depuis l'intérieur — caméras, serrures, coffres de données, drones.</p>
@@ -106,8 +106,8 @@ const classes = [
     slug: "techie",
     nomDeLaClasse: "Techie",
     nomDeLaCapacitSpCiale: "Maker",
-    portraitSrc: "/classes/techie.svg",
-    imageSrc: "/classes/techie.svg",
+    portraitSrc: "/classes/techie.webp",
+    imageSrc: "/classes/techie.webp",
     excerpt:
       "Bricoleurs, armuriers et génies du rebut. Maker mesure combien d'inventions ou d'améliorations tu peux entretenir.",
     background: `<p>Les Techies font tenir Night City avec du fil de fer, des pièces volées et un fer à souder trop chaud. Personne ne sait vraiment comment la moitié des machines fonctionne encore. Eux, si — ou ils font semblant assez longtemps pour que ça reparte.</p>
@@ -134,8 +134,8 @@ const classes = [
     slug: "medtech",
     nomDeLaClasse: "Medtech",
     nomDeLaCapacitSpCiale: "Médecine",
-    portraitSrc: "/classes/medtech.svg",
-    imageSrc: "/classes/medtech.svg",
+    portraitSrc: "/classes/medtech.webp",
+    imageSrc: "/classes/medtech.webp",
     excerpt:
       "Chirurgiens de rue, ripperdocs et sauveteurs. Médecine couvre pharma, chirurgie, cyberware et cryo.",
     background: `<p>Les Medtechs sont ceux qui recollent les edgerunners. Parfois dans un hôpital corpo. Plus souvent dans une baignoire de Kabuki, sous une lumière chirurgicale volée, pendant que quelqu'un tient la porte.</p>
@@ -162,8 +162,8 @@ const classes = [
     slug: "media",
     nomDeLaClasse: "Media",
     nomDeLaCapacitSpCiale: "Crédibilité",
-    portraitSrc: "/classes/media.svg",
-    imageSrc: "/classes/media.svg",
+    portraitSrc: "/classes/media.webp",
+    imageSrc: "/classes/media.webp",
     excerpt:
       "Journalistes, streamers et chasseurs de vérités. Crédibilité mesure l'audience que tu touches et les portes qu'elle ouvre.",
     background: `<p>Les Medias sont l'autre arme de Night City : caméras, réseaux, rumeurs. Un article bien placé fait plus de dégâts à une corpo qu'une grenade — et parfois les deux, dans le bon ordre.</p>
@@ -190,8 +190,8 @@ const classes = [
     slug: "corporatiste",
     nomDeLaClasse: "Corporatiste",
     nomDeLaCapacitSpCiale: "Teamwork",
-    portraitSrc: "/classes/corporatiste.svg",
-    imageSrc: "/classes/corporatiste.svg",
+    portraitSrc: "/classes/corporatiste.webp",
+    imageSrc: "/classes/corporatiste.webp",
     excerpt:
       "Cadres, opérateurs et chefs d'équipe. Teamwork te donne des employés qui travaillent même quand tu n'es pas dans la pièce.",
     background: `<p>Les Corporatistes (Execs) sont ceux qui ont encore un badge, un budget, et une équipe. Pas forcément Arasaka Tower : une PME de salvage, une clinique, un label, une milice privée. Dans Night City, « avoir des gens » est une forme de chrome.</p>
@@ -218,8 +218,8 @@ const classes = [
     slug: "justicier",
     nomDeLaClasse: "Justicier",
     nomDeLaCapacitSpCiale: "Renforts",
-    portraitSrc: "/classes/justicier.svg",
-    imageSrc: "/classes/justicier.svg",
+    portraitSrc: "/classes/justicier.jpg",
+    imageSrc: "/classes/justicier.jpg",
     excerpt:
       "Flics, miliciens et chasseurs de primes. Renforts mesure qui débarque quand tu appelles, et dans combien de temps.",
     background: `<p>Les Justiciers (Lawmen) portent encore un badge, ou du moins l'idée d'un badge : NCPD, milice de quartier, sécu corpo, bounty office. Dans Night City, la loi est une ressource, pas une morale. Celui qui peut appeler du backup a un super-pouvoir que le Solo envie — jusqu'au moment où le backup tire aussi sur lui.</p>
@@ -246,8 +246,8 @@ const classes = [
     slug: "fixer",
     nomDeLaClasse: "Fixer",
     nomDeLaCapacitSpCiale: "Operator",
-    portraitSrc: "/classes/fixer.svg",
-    imageSrc: "/classes/fixer.svg",
+    portraitSrc: "/classes/fixer.webp",
+    imageSrc: "/classes/fixer.webp",
     excerpt:
       "Intermédiaires, receleurs et faiseurs de deals. Operator mesure tes contacts, tes rabais, et ce que tu peux dénicher.",
     background: `<p>Les Fixers sont le système nerveux de la rue : jobs, armes, planques, faux papiers, rumeurs. Rien ne circule à Night City sans qu'un Fixer n'en prenne une commission, même microscopique.</p>
@@ -274,8 +274,8 @@ const classes = [
     slug: "nomade",
     nomDeLaClasse: "Nomade",
     nomDeLaCapacitSpCiale: "Moto",
-    portraitSrc: "/classes/nomade.svg",
-    imageSrc: "/classes/nomade.svg",
+    portraitSrc: "/classes/nomade.webp",
+    imageSrc: "/classes/nomade.webp",
     excerpt:
       "Clans de la route, convoyeurs et familles armées. Moto mesure les véhicules et les cousins que tu peux appeler.",
     background: `<p>Les Nomades n'ont pas de quartier : ils ont une famille, des véhicules, et la route. Après les expropriations, les guerres et l'effondrement des interstates, les packs sont devenus le seul réseau logistique encore debout entre Night City et le reste du continent.</p>
