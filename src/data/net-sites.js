@@ -1,10 +1,24 @@
 const netSites = [
   {
+    slug: "nccs",
+    nom: "Portail municipal NCCS",
+    url: "/net/nccs",
+    disponible: true,
+    resume: "Night City Civic Services — répertoire officiel des districts, fiches urbaines et contacts de proximité.",
+  },
+  {
     slug: "ncpd",
     nom: "NCPD",
     url: "/net/ncpd",
     disponible: true,
     resume: "Night City Police Department — portail public : signalements, avis de recherche, prévention.",
+  },
+  {
+    slug: "freelance",
+    nom: "EdgeWork — Bourse aux contrats",
+    url: "/net/freelance",
+    disponible: true,
+    resume: "Annonces freelance pour edgerunners. Profils, capacités, dossiers ouverts. Aucune assurance.",
   },
   {
     slug: "arasaka",

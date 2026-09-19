@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Vue MJ — Table connectée — Daily NightCity</title>
+    <link rel="stylesheet" href="/css/table.css" />
+  </head>
+  <body data-role="mj">
+    <div class="mj-banner">Vue MJ</div>
+    <div class="page">
+      <header class="top">
+        <div>
+          <p class="kicker">Campagne Cyberpunk Red</p>
+          <h1>Daily NightCity</h1>
+          <p class="sub">Table connectée</p>
+        </div>
+        <p class="status" id="status" data-state="off">hors ligne</p>
+      </header>
+
+      <section class="login" id="login-screen">
+        <p class="kicker">Connexion MJ</p>
+        <h2 class="login-title">Prends ta place</h2>
+        <p class="login-hint">
+          Première visite : tu crées l'identité MJ de cette table. Ensuite, seul ce nom et ce code pourront ouvrir cette page.
+        </p>
+        <form id="login-form" autocomplete="off">
+          <label class="field">
+            <span>Nom</span>
+            <input id="login-name" name="name" type="text" maxlength="32" required spellcheck="off" autocapitalize="words" />
+          </label>
+          <label class="field">
+            <span>Code à 4 chiffres</span>
+            <input id="login-code" name="code" type="text" inputmode="numeric" pattern="\d{4}" maxlength="4" required />
+          </label>
+          <p class="login-error" id="login-error" hidden></p>
+          <button type="submit" class="login-btn" id="login-submit">Entrer à la table</button>
+        </form>
+      </section>
+
+      <div id="table-screen" hidden>
+        <section class="you" aria-live="polite">
+          <p class="kicker">Tu es</p>
+          <p class="you-name" id="you-name">—</p>
+          <p class="presence" id="presence">Personne autour de la table pour l'instant.</p>
+          <button type="button" class="text-btn" id="switch-character">Ce n'est pas moi / changer de personnage</button>
+        </section>
+
+        <button type="button" class="die-btn" id="roll" disabled>
+          <svg class="die-svg" viewBox="0 0 100 100" aria-hidden="true">
+            <polygon points="50,4 96,38 78,96 22,96 4,38" />
+            <text x="50" y="58">d10</text>
+          </svg>
+          <span>Lancer le d10</span>
+        </button>
+
+        <section class="latest" id="latest" aria-live="polite">
+          <p class="kicker">Dernier lancer</p>
+          <p class="empty" id="latest-empty">En attente du premier lancer…</p>
+          <div class="latest-body" id="latest-body" hidden></div>
+        </section>
+
+        <section class="history">
+          <h2 class="kicker">Historique</h2>
+          <ol class="history-list" id="history"></ol>
+        </section>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/table.js"></script>
+  </body>
+</html>

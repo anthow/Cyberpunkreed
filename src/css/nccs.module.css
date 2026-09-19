@@ -1,0 +1,273 @@
+.shell {
+  min-height: 100vh;
+  background: #e4dfd0;
+  color: #2c3224;
+  font-family: "Georgia", "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.bar {
+  background: #3f4d32;
+  color: #f3efe3;
+  border-bottom: 5px solid #c4a574;
+}
+
+.barInner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px 20px 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 8px;
+}
+
+.brandMark {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.brandSub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.nav a {
+  color: #f3efe3;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+.netExit {
+  display: inline-block;
+  margin-top: 8px;
+  color: #d7c9a8;
+  font-size: 0.75rem;
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.netExit:hover,
+.netExit:focus-visible {
+  text-decoration: underline;
+}
+
+.main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 20px 56px;
+}
+
+.panel {
+  background: #f6f1e4;
+  border: 1px solid #c4b89a;
+  box-shadow: 0 1px 0 #fff8e8 inset;
+  padding: 24px 28px 32px;
+}
+
+.kicker {
+  margin: 0 0 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #5c6b45;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.title {
+  margin: 0 0 12px;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #3f4d32;
+}
+
+.lede {
+  margin: 0 0 22px;
+  font-size: 1.05rem;
+  color: #5a5344;
+}
+
+.directory {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .directory {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .directory {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fbf7ec;
+  border: 1px solid #b7aa8c;
+  border-left: 5px solid #3f4d32;
+  color: #2c3224;
+  text-decoration: none;
+  padding: 0 0 14px;
+}
+
+.card:hover,
+.card:focus-visible {
+  background: #fffdf6;
+  outline: 2px solid #3f4d32;
+  outline-offset: 2px;
+}
+
+.cardImg {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #c4b89a;
+}
+
+.cardTitle {
+  margin: 12px 14px 4px;
+  font-size: 1.15rem;
+}
+
+.cardHint {
+  margin: 0 14px;
+  font-size: 0.8rem;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: #6a624f;
+}
+
+.fiche {
+  display: grid;
+  gap: 28px;
+}
+
+@media (min-width: 900px) {
+  .fiche {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+  }
+}
+
+.portrait {
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #b7aa8c;
+  display: block;
+  background: #d9d2c0;
+}
+
+.parent {
+  margin: 0 0 10px;
+  font-size: 0.88rem;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: #5a5344;
+}
+
+.parent a {
+  color: #3f4d32;
+  font-weight: 700;
+}
+
+.zone {
+  margin: 0 0 16px;
+  font-size: 1.05rem;
+  color: #6b5a3a;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.body p {
+  margin: 0 0 12px;
+}
+
+.figure {
+  margin: 22px 0 0;
+  padding: 16px 18px;
+  background: #efe6d2;
+  border: 1px solid #c4a574;
+  border-left: 5px solid #8a6a3a;
+}
+
+.figureTitle {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  color: #3f4d32;
+}
+
+.figureNom {
+  margin: 0;
+  font-weight: 700;
+}
+
+.figureRole {
+  margin: 4px 0 10px;
+  font-style: italic;
+  color: #5a5344;
+}
+
+.figureAccroche {
+  margin: 0;
+}
+
+.subs {
+  margin-top: 28px;
+}
+
+.subs h2 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #3f4d32;
+}
+
+.subs ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.subs a {
+  color: #3f4d32;
+}
+
+.footer {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 8px 20px 28px;
+  font-size: 0.76rem;
+  color: #6a624f;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}

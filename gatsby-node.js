@@ -8,21 +8,34 @@ exports.createPages = ({ actions }) => {
   const classeTemplate = path.resolve("src/templates/classes.js")
   const quartierTemplate = path.resolve("src/templates/quartier.js")
   const gangTemplate = path.resolve("src/templates/gang.js")
+  const redirectTemplate = path.resolve("src/templates/redirect.js")
+
+  const alias = (fromPath, toPath) => {
+    createPage({
+      path: fromPath,
+      component: redirectTemplate,
+      context: { to: toPath },
+    })
+  }
 
   classes.forEach(classe => {
+    const to = `/net/freelance/${classe.slug}`
     createPage({
-      path: `/classes/${classe.slug}`,
+      path: to,
       component: classeTemplate,
       context: { slug: classe.slug },
     })
+    alias(`/classes/${classe.slug}`, to)
   })
 
   quartiers.forEach(quartier => {
+    const to = `/net/nccs/${quartier.slug}`
     createPage({
-      path: `/lore/quartiers/${quartier.slug}`,
+      path: to,
       component: quartierTemplate,
       context: { slug: quartier.slug },
     })
+    alias(`/lore/quartiers/${quartier.slug}`, to)
   })
 
   gangs.forEach(gang => {
@@ -32,4 +45,7 @@ exports.createPages = ({ actions }) => {
       context: { slug: gang.slug },
     })
   })
+
+  alias("/classes", "/net/freelance")
+  alias("/lore/quartiers", "/net/nccs")
 }

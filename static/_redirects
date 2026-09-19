@@ -1,0 +1,4 @@
+/classes /net/freelance 301
+/classes/* /net/freelance/:splat 301
+/lore/quartiers /net/nccs 301
+/lore/quartiers/* /net/nccs/:splat 301

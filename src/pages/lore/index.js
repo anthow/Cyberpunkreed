@@ -12,7 +12,7 @@ const lorePage = () => (
     <article className="w-9/12 m-auto text-white">
       <h1 className="text-5xl font-black text-red-600 mb-20">Le Lore</h1>
       <div className="md:grid grid-cols-4 gap-10">
-        <Link to="/lore/quartiers">
+        <Link to="/net/nccs">
           <section className="flex mb-10 flex-col space-y-2 items-center">
             <img
               src="/quartiers/placeholder.svg"

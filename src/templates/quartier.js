@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import NccsLayout from "../components/nccs-layout"
+import * as styles from "../css/nccs.module.css"
 import { htmlToExcerpt } from "../utils/seo-text"
 const { getQuartier } = require("../data/quartiers")
 
@@ -15,44 +15,47 @@ const QuartierPage = ({ pageContext }) => {
     htmlToExcerpt(quartier.description) || `Fiche du quartier ${quartier.nom} dans Night City.`
 
   return (
-    <Layout>
-      <Seo title={quartier.nom} titleTemplate="%s | Les Quartiers" description={description} />
-      <article className="w-10/12 m-auto grid grid-cols-1 lg:grid-cols-2 gap-10 justify-center text-white">
-        {quartier.imageSrc && (
-          <img src={quartier.imageSrc} alt={quartier.nom} className="w-full rounded-full lg:rounded-none max-w-md mx-auto" />
-        )}
-        <section>
-          {parent && (
-            <p className="text-sm text-gray-400 mb-3">
-              Fait partie de{" "}
-              <Link to={`/lore/quartiers/${parent.slug}`} className="text-yellow-400 hover:text-yellow-300 underline">
-                {parent.nom}
-              </Link>
-            </p>
+    <NccsLayout title={quartier.nom} description={description}>
+      <article className={styles.panel}>
+        <div className={styles.fiche}>
+          {quartier.imageSrc && (
+            <img src={quartier.imageSrc} alt={quartier.nom} className={styles.portrait} />
           )}
-          <h1 className="text-3xl font-black text-red-600">{quartier.nom}</h1>
-          <h2 className="text-2xl font-black text-yellow-600">{quartier.typeDeZone}</h2>
-          <div className="w-10/12 mb-10" dangerouslySetInnerHTML={{ __html: quartier.description }} />
-          {sousQuartiers.length > 0 && (
-            <section className="w-10/12 mb-10">
-              <h2 className="text-2xl font-black text-yellow-600 mb-3">Sous-quartiers</h2>
-              <ul className="space-y-2">
-                {sousQuartiers.map(enfant => (
-                  <li key={enfant.slug}>
-                    <Link
-                      to={`/lore/quartiers/${enfant.slug}`}
-                      className="text-yellow-400 hover:text-yellow-300 underline"
-                    >
-                      {enfant.nom}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-        </section>
+          <section>
+            {parent && (
+              <p className={styles.parent}>
+                Secteur rattaché à{" "}
+                <Link to={`/net/nccs/${parent.slug}`}>{parent.nom}</Link>
+              </p>
+            )}
+            <p className={styles.kicker}>Fiche de district</p>
+            <h1 className={styles.title}>{quartier.nom}</h1>
+            <p className={styles.zone}>{quartier.typeDeZone}</p>
+            <div className={styles.body} dangerouslySetInnerHTML={{ __html: quartier.description }} />
+            {quartier.figureLocale && (
+              <aside className={styles.figure}>
+                <h2 className={styles.figureTitle}>Figure locale</h2>
+                <p className={styles.figureNom}>{quartier.figureLocale.nom}</p>
+                <p className={styles.figureRole}>{quartier.figureLocale.role}</p>
+                <p className={styles.figureAccroche}>{quartier.figureLocale.accroche}</p>
+              </aside>
+            )}
+            {sousQuartiers.length > 0 && (
+              <section className={styles.subs}>
+                <h2>Sous-secteurs recensés</h2>
+                <ul>
+                  {sousQuartiers.map(enfant => (
+                    <li key={enfant.slug}>
+                      <Link to={`/net/nccs/${enfant.slug}`}>{enfant.nom}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+          </section>
+        </div>
       </article>
-    </Layout>
+    </NccsLayout>
   )
 }
 

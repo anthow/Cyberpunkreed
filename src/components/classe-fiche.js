@@ -1,8 +1,9 @@
 import * as React from "react"
-import Layout from "./layout"
-import Seo from "./seo"
+import { Link } from "gatsby"
+import FreelanceLayout from "./freelance-layout"
 import ClassImage from "./class-image"
 import { htmlToExcerpt } from "../utils/seo-text"
+import * as styles from "../css/freelance.module.css"
 
 const SECTIONS = [
   { id: "background", label: "Background" },
@@ -12,8 +13,6 @@ const SECTIONS = [
 
 const RANK_PATTERN =
   /<p>\s*<strong>\s*Rang\s+(\d+)\s*<\/strong>\s*[—–-]\s*([\s\S]*?)<\/p>/gi
-
-const focusRing = "cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500"
 
 function splitProgression(html = "") {
   const ranks = []
@@ -54,13 +53,13 @@ const ClasseFiche = ({
   const boutonRangRefs = React.useRef({})
 
   React.useEffect(() => {
-    if (ranks.length && !ranks.some((rang) => rang.rang === rangActif)) {
+    if (ranks.length && !ranks.some(rang => rang.rang === rangActif)) {
       setRangActif(ranks[0].rang)
     }
   }, [ranks, rangActif])
 
-  const ouvrirSection = (id) => {
-    setSectionOuverte((actuelle) => (actuelle === id ? null : id))
+  const ouvrirSection = id => {
+    setSectionOuverte(actuelle => (actuelle === id ? null : id))
   }
 
   const onSectionKeyDown = (event, index) => {
@@ -76,7 +75,7 @@ const ClasseFiche = ({
     boutonSectionRefs.current[id]?.focus()
   }
 
-  const activerRang = (rang) => {
+  const activerRang = rang => {
     setRangActif(rang)
     requestAnimationFrame(() => boutonRangRefs.current[rang]?.focus())
   }
@@ -98,81 +97,85 @@ const ClasseFiche = ({
     activerRang(ranks[next].rang)
   }
 
-  const rangSelectionne = ranks.find((rang) => rang.rang === rangActif) || ranks[0]
+  const rangSelectionne = ranks.find(rang => rang.rang === rangActif) || ranks[0]
 
   return (
-    <Layout>
-      <Seo title={nom} description={descriptionSeo} />
-      <article className="fiche-classe w-10/12 m-auto grid grid-cols-1 lg:grid-cols-2 justify-center text-white gap-10">
-        <ClassImage slug={slug} name={nom} imageSrc={imageSrc} className="w-full" />
-        <section>
-          <h1 className="text-3xl font-black text-red-600">{nom}</h1>
-          <div className="mt-4 border-t border-white/20">
-            {SECTIONS.map((section, index) => {
-              const ouverte = sectionOuverte === section.id
-              const panelId = `${uid}-panel-${section.id}`
-              const boutonId = `${uid}-bouton-${section.id}`
-              return (
-                <div key={section.id} className="border-b border-white/20">
-                  <h2 className="text-2xl font-black text-yellow-600">
-                    <button
-                      type="button"
-                      id={boutonId}
-                      ref={(node) => {
-                        boutonSectionRefs.current[section.id] = node
-                      }}
-                      className={`flex w-full min-h-[44px] items-center justify-between gap-3 py-3 text-left touch-manipulation ${focusRing}`}
-                      aria-expanded={ouverte}
-                      aria-controls={panelId}
-                      aria-label={section.label}
-                      onClick={() => ouvrirSection(section.id)}
-                      onKeyDown={(event) => onSectionKeyDown(event, index)}
-                    >
-                      <span>{section.label}</span>
-                      <span aria-hidden="true" className="text-red-600 text-3xl leading-none">
-                        {ouverte ? "−" : "+"}
-                      </span>
-                    </button>
-                  </h2>
-                  {ouverte && (
-                    <div
-                      id={panelId}
-                      role="region"
-                      aria-label={section.label}
-                      className="pb-6 pt-1 leading-relaxed"
-                    >
-                      {section.id === "background" && (
-                        <div dangerouslySetInnerHTML={{ __html: background }} />
-                      )}
-                      {section.id === "capacite" && (
-                        <>
-                          <h3 className="text-xl font-black text-white mb-5">{nomCapacite}</h3>
-                          <div dangerouslySetInnerHTML={{ __html: description }} />
-                        </>
-                      )}
-                      {section.id === "progression" && (
-                        <ProgressionRang
-                          uid={uid}
-                          intro={intro}
-                          ranks={ranks}
-                          fallbackHtml={detail}
-                          rangActif={rangSelectionne?.rang}
-                          rangSelectionne={rangSelectionne}
-                          boutonRangRefs={boutonRangRefs}
-                          onSelect={activerRang}
-                          onRangKeyDown={onRangKeyDown}
-                          focusRing={focusRing}
-                        />
-                      )}
-                    </div>
-                  )}
-                </div>
-              )
-            })}
-          </div>
-        </section>
+    <FreelanceLayout title={nom} description={descriptionSeo}>
+      <article className={styles.panel}>
+        <Link to="/net/freelance" className={styles.back}>
+          ← Retour aux annonces
+        </Link>
+        <div className={styles.fiche}>
+          <ClassImage slug={slug} name={nom} imageSrc={imageSrc} className={styles.portrait} />
+          <section>
+            <h1 className={styles.ficheTitle}>{nom}</h1>
+            <div className={styles.accordion}>
+              {SECTIONS.map((section, index) => {
+                const ouverte = sectionOuverte === section.id
+                const panelId = `${uid}-panel-${section.id}`
+                const boutonId = `${uid}-bouton-${section.id}`
+                return (
+                  <div key={section.id} className={styles.accItem}>
+                    <h2>
+                      <button
+                        type="button"
+                        id={boutonId}
+                        ref={node => {
+                          boutonSectionRefs.current[section.id] = node
+                        }}
+                        className={styles.accButton}
+                        aria-expanded={ouverte}
+                        aria-controls={panelId}
+                        aria-label={section.label}
+                        onClick={() => ouvrirSection(section.id)}
+                        onKeyDown={event => onSectionKeyDown(event, index)}
+                      >
+                        <span>{section.label}</span>
+                        <span aria-hidden="true" className={styles.accIcon}>
+                          {ouverte ? "−" : "+"}
+                        </span>
+                      </button>
+                    </h2>
+                    {ouverte && (
+                      <div
+                        id={panelId}
+                        role="region"
+                        aria-label={section.label}
+                        className={styles.accPanel}
+                      >
+                        {section.id === "background" && (
+                          <div dangerouslySetInnerHTML={{ __html: background }} />
+                        )}
+                        {section.id === "capacite" && (
+                          <>
+                            <h3 className={styles.capName}>{nomCapacite}</h3>
+                            <div dangerouslySetInnerHTML={{ __html: description }} />
+                          </>
+                        )}
+                        {section.id === "progression" && (
+                          <ProgressionRang
+                            uid={uid}
+                            intro={intro}
+                            ranks={ranks}
+                            fallbackHtml={detail}
+                            rangActif={rangSelectionne?.rang}
+                            rangSelectionne={rangSelectionne}
+                            boutonRangRefs={boutonRangRefs}
+                            onSelect={activerRang}
+                            onRangKeyDown={onRangKeyDown}
+                            styles={styles}
+                          />
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </section>
+        </div>
       </article>
-    </Layout>
+    </FreelanceLayout>
   )
 }
 
@@ -186,7 +189,7 @@ const ProgressionRang = ({
   boutonRangRefs,
   onSelect,
   onRangKeyDown,
-  focusRing,
+  styles,
 }) => {
   if (!ranks.length) {
     return <div dangerouslySetInnerHTML={{ __html: fallbackHtml }} />
@@ -194,12 +197,8 @@ const ProgressionRang = ({
 
   return (
     <>
-      {intro ? <div className="mb-5" dangerouslySetInnerHTML={{ __html: intro }} /> : null}
-      <div
-        role="radiogroup"
-        aria-label="Rang de progression"
-        className="grid grid-cols-2 sm:grid-cols-5 gap-2"
-      >
+      {intro ? <div dangerouslySetInnerHTML={{ __html: intro }} /> : null}
+      <div role="radiogroup" aria-label="Rang de progression" className={styles.rankGrid}>
         {ranks.map((rang, index) => {
           const actif = rang.rang === rangActif
           return (
@@ -208,17 +207,13 @@ const ProgressionRang = ({
               type="button"
               role="radio"
               aria-checked={actif}
-              ref={(node) => {
+              ref={node => {
                 boutonRangRefs.current[rang.rang] = node
               }}
               tabIndex={actif ? 0 : -1}
-              className={`min-h-[44px] px-2 py-2 text-sm font-black touch-manipulation border ${focusRing} ${
-                actif
-                  ? "bg-red-600 border-red-600 text-white"
-                  : "bg-transparent border-yellow-600 text-yellow-600"
-              }`}
+              className={`${styles.rankBtn} ${actif ? styles.rankBtnActive : ""}`}
               onClick={() => onSelect(rang.rang)}
-              onKeyDown={(event) => onRangKeyDown(event, index)}
+              onKeyDown={event => onRangKeyDown(event, index)}
             >
               Rang {rang.rang}
             </button>
@@ -226,13 +221,8 @@ const ProgressionRang = ({
         })}
       </div>
       {rangSelectionne && (
-        <div
-          id={`${uid}-rang-detail`}
-          className="mt-5 p-4 border border-red-600/80"
-        >
-          <p className="text-xl font-black text-yellow-600 mb-2">
-            Rang {rangSelectionne.rang}
-          </p>
+        <div id={`${uid}-rang-detail`} className={styles.rankDetail}>
+          <p className={styles.rankDetailTitle}>Rang {rangSelectionne.rang}</p>
           <div dangerouslySetInnerHTML={{ __html: rangSelectionne.html }} />
         </div>
       )}

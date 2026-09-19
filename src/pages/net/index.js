@@ -15,7 +15,7 @@ const NetPage = () => (
       <h1 className="text-5xl font-black text-red-600 mb-4">Le NET</h1>
       <p className="text-lg text-gray-300 mb-12 max-w-3xl">
         Les architectures locales encore joignables depuis Night City. La plupart des nœuds corpo refusent votre
-        identifiant. Un seul portail public répond pour l'instant.
+        identifiant. Trois portails publics répondent pour l'instant.
       </p>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {netSites.map(site =>
