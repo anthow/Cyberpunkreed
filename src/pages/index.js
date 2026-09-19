@@ -9,7 +9,7 @@ const cards = [
     to: "/classes",
     title: "Classes",
     text: "Les dix rôles de Night City, leurs backgrounds et la progression de chaque capacité spéciale.",
-    image: "/classes/rockeur.svg",
+    image: "/classes/rockeur.webp",
     alt: "Portrait du Rockeur",
   },
   {

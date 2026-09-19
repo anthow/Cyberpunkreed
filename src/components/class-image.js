@@ -1,16 +1,16 @@
 import * as React from "react"
 
 const LOCAL_IMAGES = {
-  rockeur: "/classes/rockeur.svg",
-  solo: "/classes/solo.svg",
-  netrunner: "/classes/netrunner.svg",
-  techie: "/classes/techie.svg",
-  medtech: "/classes/medtech.svg",
-  media: "/classes/media.svg",
-  corporatiste: "/classes/corporatiste.svg",
-  justicier: "/classes/justicier.svg",
-  fixer: "/classes/fixer.svg",
-  nomade: "/classes/nomade.svg",
+  rockeur: "/classes/rockeur.webp",
+  solo: "/classes/solo.webp",
+  netrunner: "/classes/netrunner.webp",
+  techie: "/classes/techie.webp",
+  medtech: "/classes/medtech.webp",
+  media: "/classes/media.webp",
+  corporatiste: "/classes/corporatiste.webp",
+  justicier: "/classes/justicier.jpg",
+  fixer: "/classes/fixer.webp",
+  nomade: "/classes/nomade.webp",
 }
 
 export function localClassKey(slug = "", name = "") {
