@@ -1,0 +1,275 @@
+.shell {
+  min-height: 100vh;
+  background: #d6dee8;
+  color: #1a2330;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.bar {
+  background: #1e3a5f;
+  color: #f4f7fb;
+  border-bottom: 4px solid #c5a046;
+}
+
+.barInner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 14px 20px 10px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.brandMark {
+  font-size: 1.35rem;
+}
+
+.brandSub {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  color: #f4f7fb;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+.nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+}
+
+.panel {
+  background: #f4f7fb;
+  border: 1px solid #b7c4d4;
+  box-shadow: 0 1px 0 #fff inset;
+  padding: 24px 28px;
+}
+
+.kicker {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #3d5a80;
+}
+
+.title {
+  margin: 0 0 16px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e3a5f;
+}
+
+.lede {
+  margin: 0 0 18px;
+  font-size: 1.05rem;
+  color: #3d5a80;
+  font-weight: 600;
+}
+
+.body p {
+  margin: 0 0 12px;
+}
+
+.cards {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+@media (min-width: 700px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: block;
+  background: #eef3f8;
+  border: 1px solid #9eb1c6;
+  color: #1e3a5f;
+  text-decoration: none;
+  padding: 16px;
+  font-weight: 700;
+}
+
+.card:hover,
+.card:focus-visible {
+  background: #e2ebf5;
+  outline: 2px solid #1e3a5f;
+  outline-offset: 2px;
+}
+
+.cardHint {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #4a5d73;
+}
+
+.gangList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.gangCard {
+  border: 1px solid #b7c4d4;
+  border-left: 5px solid #1e3a5f;
+  background: #fff;
+  padding: 16px 18px;
+}
+
+.gangCard h2 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  color: #1e3a5f;
+}
+
+.muted {
+  color: #5b6b7d;
+}
+
+.footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 12px 20px 28px;
+  font-size: 0.78rem;
+  color: #4a5d73;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.employee {
+  color: #6a7c8f;
+  text-decoration: none;
+}
+
+.employee:hover,
+.employee:focus-visible {
+  color: #1e3a5f;
+  text-decoration: underline;
+  outline: none;
+}
+
+.netExit {
+  display: inline-block;
+  margin-top: 8px;
+  color: #c5d4e4;
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.netExit:hover,
+.netExit:focus-visible {
+  text-decoration: underline;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e3a5f;
+}
+
+.input {
+  border: 1px solid #7d93ab;
+  background: #fff;
+  color: #1a2330;
+  padding: 10px 12px;
+  font-size: 1rem;
+}
+
+.input:focus-visible {
+  outline: 2px solid #1e3a5f;
+  outline-offset: 2px;
+}
+
+.submit {
+  align-self: flex-start;
+  background: #1e3a5f;
+  color: #fff;
+  border: 0;
+  padding: 10px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submit:hover,
+.submit:focus-visible {
+  background: #16304e;
+  outline: 2px solid #c5a046;
+  outline-offset: 2px;
+}
+
+.denied {
+  margin: 0;
+  padding: 10px 12px;
+  background: #f4d6d6;
+  border: 1px solid #a33;
+  color: #7a1212;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.classified {
+  margin-top: 24px;
+  padding-top: 8px;
+  border-top: 2px solid #1e3a5f;
+}
+
+.banner {
+  background: #3d5a80;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 6px 12px;
+}

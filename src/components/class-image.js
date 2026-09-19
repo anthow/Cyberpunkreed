@@ -4,13 +4,13 @@ const LOCAL_IMAGES = {
   rockeur: "/classes/rockeur.webp",
   solo: "/classes/solo.webp",
   netrunner: "/classes/netrunner.webp",
-  techie: "/classes/techie.webp",
+  techie: "/classes/techie.png",
   medtech: "/classes/medtech.webp",
-  media: "/classes/media.webp",
+  media: "/classes/media.png",
   corporatiste: "/classes/corporatiste.webp",
   justicier: "/classes/justicier.jpg",
   fixer: "/classes/fixer.webp",
-  nomade: "/classes/nomade.webp",
+  nomade: "/classes/nomade.png",
 }
 
 export function localClassKey(slug = "", name = "") {

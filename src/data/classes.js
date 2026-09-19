@@ -105,30 +105,14 @@ const classes = [
   {
     slug: "techie",
     nomDeLaClasse: "Techie",
-    nomDeLaCapacitSpCiale: "Maker",
+    nomDeLaCapacitSpCiale: "Bricoleur",
     portraitSrc: "/classes/techie-token.png",
-    imageSrc: "/classes/techie.webp",
+    imageSrc: "/classes/techie.png",
     excerpt:
       "Bricoleurs, armuriers et génies du rebut. Maker mesure combien d'inventions ou d'améliorations tu peux entretenir.",
-    background: `<p>Les Techies font tenir Night City avec du fil de fer, des pièces volées et un fer à souder trop chaud. Personne ne sait vraiment comment la moitié des machines fonctionne encore. Eux, si — ou ils font semblant assez longtemps pour que ça reparte.</p>
-<p>Après la Guerre, les chaînes d'approvisionnement sont mortes. Un Techie qui sait fabriquer, réparer et améliorer vaut plus qu'un cargo de chrome flambant neuf. Dans un groupe d'edgerunners, c'est souvent la personne qui transforme un plan idiot en plan faisable.</p>`,
-    description: `<p><strong>Maker</strong> est la capacité de rôle du Techie. Ton rang égale le nombre d'objets inventés ou améliorés que tu peux entretenir en même temps. Tu peux fabriquer, améliorer, inventer, et faire du <strong>Jury Rig</strong> (réparation de fortune, le temps d'un combat ou d'une scène).</p>
-<p>Plus le rang monte, plus la qualité des améliorations grimpe, et plus tu peux t'attaquer à du matériel lourd : armes exotiques, véhicules, cyberware bricolé.</p>`,
-    dTailCapacitSpCiale: ranksHtml(
-      `<p>Objets entretenus = rang de Maker. Le Jury Rig est disponible dès le rang 1.</p>`,
-      [
-        "1 objet. Jury Rig. Tu maintiens un gadget ou une arme améliorée.",
-        "2 objets. Tes réparations tiennent plus longtemps que le ruban adhésif.",
-        "3 objets. Améliorations correctes, déjà vendables dans la rue.",
-        "4 objets. Tu commences à viser de la qualité Excellent.",
-        "5 objets. Inventions franches : du matériel qui n'existait pas dans le catalogue.",
-        "6 objets. Armes, armures, outils : l'atelier devient une boutique.",
-        "7 objets. Véhicules et systèmes lourds. Un Nomade te paierait en essence.",
-        "8 objets. Qualité Exceptionnelle. Les corpos envoient des recruteurs — ou des tueurs.",
-        "9 objets. Presque plus de limite pratique, sauf le temps et les pièces.",
-        "10 objets. Légende du Maker. Ce que tu sors de l'établi n'a pas de prix, et tout le monde le sait.",
-      ]
-    ),
+    background: `<p>Dans le Night City de l'après-guerre, rien ne reste en état de marche bien longtemps — et c'est là que le Techie entre en scène. Réparateur, bricoleur, inventeur : il redonne vie à tout ce qui tombe entre ses mains, d'un frigo domestique à une pièce de cyberware corpo dérobée. Son atelier est un mélange de génie et de chaos, et son carnet de contacts s'étend des ferrailleurs du marché noir aux Medtechs qui dépendent de ses modifications. Ce travail paie bien quand il touche à l'illégal — armes trafiquées, cyberware non homologué, matériel d'espionnage — mais chaque client mécontent est un ennemi de plus, et chaque succès attire l'attention de gens qu'il vaudrait mieux ne pas croiser.</p>`,
+    description: `<p>Le Techie possède la capacité de rôle Bricoleur : il peut réparer, améliorer, fabriquer et inventer des objets là où n'importe qui d'autre resterait démuni. Il choisit deux spécialités parmi Expert sur le terrain (réparations rapides en situation d'urgence), Expert en amélioration, Expert en fabrication et Expert en invention. Plus il progresse, plus ses créations deviennent ambitieuses — jusqu'à concevoir des pièces uniques que ni les corpos ni la rue ne savent produire.</p>`,
+    dTailCapacitSpCiale: `<p>Au rang 1, le Techie répare l'électronique courante et bricole des solutions de fortune. Au rang 10, il conçoit et fabrique des technologies expérimentales — cyberware sur mesure, armes modifiées au-delà des standards du marché — au point d'être courtisé aussi bien par des gangs que par des corporations qui préféreraient l'avoir avec elles plutôt que contre elles.</p>`,
   },
   {
     slug: "medtech",
@@ -163,28 +147,12 @@ const classes = [
     nomDeLaClasse: "Media",
     nomDeLaCapacitSpCiale: "Crédibilité",
     portraitSrc: "/classes/media-token.png",
-    imageSrc: "/classes/media.webp",
+    imageSrc: "/classes/media.png",
     excerpt:
       "Journalistes, streamers et chasseurs de vérités. Crédibilité mesure l'audience que tu touches et les portes qu'elle ouvre.",
-    background: `<p>Les Medias sont l'autre arme de Night City : caméras, réseaux, rumeurs. Un article bien placé fait plus de dégâts à une corpo qu'une grenade — et parfois les deux, dans le bon ordre.</p>
-<p>Dans le Temps du Rouge, la presse n'est plus un quatrième pouvoir propre. C'est un champ de bataille entre Network 54, des chaînes de quartier, et des solo-journalistes qui filment les fosses communes avant que quelqu'un les comble. Un Media d'équipe sait faire parler un témoin, faire taire un scandale, ou mettre le feu à la Data Pool.</p>`,
-    description: `<p><strong>Crédibilité</strong> détermine qui te croit et jusqu'où ta voix porte. Plus le rang est haut, plus l'audience est large (du bloc jusqu'aux satellites), et plus tu peux extraire des sources, des rumeurs et des faveurs « parce que t'es à l'antenne ».</p>
-<p>Un test de Crédibilité peut ouvrir une porte, protéger un contact, ou transformer un run raté en scandale public — ce qui n'est pas toujours plus sûr.</p>`,
-    dTailCapacitSpCiale: ranksHtml(
-      `<p>Le rang de Crédibilité élargit l'audience et le poids de tes infos.</p>`,
-      [
-        "Le pâté de maisons. Tes voisins te croient. Le NCPD, pas encore.",
-        "Le quartier. Un blog, une radio pirate, un feed local.",
-        "Le district. Les Fixers commencent à prendre tes appels.",
-        "Plusieurs districts. Tes sources ont des noms, pas seulement des pseudos.",
-        "Night City te lit. Une une de journal local.",
-        "La région. Les corpos te classent : utile, ou à acheter, ou à taire.",
-        "Échelle nationale (NUSA / Pacifica). Tes enquêtes ont des conséquences.",
-        "Audience continentale. On te cite. On te menace. Parfois les deux le même jour.",
-        "Audience globale. Tes lives font bouger des cours en bourse.",
-        "Voix de l'époque. Tu ne rapportes plus l'Histoire : tu la forces à se montrer.",
-      ]
-    ),
+    background: `<p>Le Media est un·e journaliste indépendant·e qui refuse de travailler pour les grandes chaînes inféodées aux corpos. Armé·e d'un vidlink et d'un badge de presse, iel traque la corruption des officiels et les scandales que les puissants préféreraient enterrer, et publie sur les screamsheets et vidscreens de la rue plutôt que sur les réseaux corporatistes. Cette indépendance a un prix : sans le parapluie d'une chaîne, chaque scoop peut attirer des représailles, et plus d'un Media a survécu de justesse à une tentative pour le faire taire. Iel s'entoure donc de contacts de confiance — solos pour la protection, netrunners pour creuser les données — et construit sa réputation scoop après scoop.</p>`,
+    description: `<p>Le Media possède la capacité de rôle Crédibilité : plus sa réputation grandit, plus son audience s'étend et plus ses révélations ont d'impact sur l'opinion publique. Cette même crédibilité lui ouvre aussi des portes ailleurs — un réseau de sources et de contacts qui lui fait remonter rumeurs et informations en continu, même sans enquête active.</p>`,
+    dTailCapacitSpCiale: `<p>Au rang 1, le Media tient un blog ou une feuille underground suivie par une poignée de fidèles. Au rang 10, iel dirige une plateforme suivie dans tout Night City, capable de faire tomber un cadre corpo ou de déclencher une émeute d'un seul reportage — autant crainte que protégée par ceux qui préfèrent l'avoir de leur côté.</p>`,
   },
   {
     slug: "corporatiste",
@@ -273,30 +241,14 @@ const classes = [
   {
     slug: "nomade",
     nomDeLaClasse: "Nomade",
-    nomDeLaCapacitSpCiale: "Moto",
+    nomDeLaCapacitSpCiale: "Convoi",
     portraitSrc: "/classes/nomade-token.png",
-    imageSrc: "/classes/nomade.webp",
+    imageSrc: "/classes/nomade.png",
     excerpt:
       "Clans de la route, convoyeurs et familles armées. Moto mesure les véhicules et les cousins que tu peux appeler.",
-    background: `<p>Les Nomades n'ont pas de quartier : ils ont une famille, des véhicules, et la route. Après les expropriations, les guerres et l'effondrement des interstates, les packs sont devenus le seul réseau logistique encore debout entre Night City et le reste du continent.</p>
-<p>Un Nomade en ville n'est jamais vraiment seul. Même quand il entre dans un bar de Watson avec une duster pleine de poussière, quelqu'un, quelque part sur le périph, attend son appel avec un camion, un fusil, ou les deux.</p>`,
-    description: `<p><strong>Moto</strong> représente ta place dans le pack. Ton rang égale à peu près le nombre de véhicules familiaux auxquels tu as accès, et la qualité de leurs upgrades. Tu peux aussi faire débarquer des membres du clan (conducteurs, mécaniciens, tireurs) quand la situation le justifie.</p>
-<p>Sans Nomade, le groupe marche. Avec un Nomade, le groupe arrive, frappe, et disparaît avant que le NCPD ait fini de remplir le formulaire.</p>`,
-    dTailCapacitSpCiale: ranksHtml(
-      `<p>Véhicules de clan accessibles ≈ rang de Moto. Les upgrades et le nombre de cousins suivent.</p>`,
-      [
-        "1 véhicule familial. Une moto, un caisse pourrie, mais elle démarre.",
-        "1 véhicule déjà amélioré. Tu n'es plus un auto-stoppeur.",
-        "2 véhicules. Un pour frapper, un pour fuir.",
-        "2 véhicules corrects + un cousin qui sait tenir un volant sous le feu.",
-        "3 véhicules. Petite colonne. Le pack commence à te devoir des faveurs — et l'inverse.",
-        "3 véhicules upgradés. Armure, armes de bord, radio clan.",
-        "4 véhicules. Tu déplaces une équipe, du matos, et un blessé.",
-        "4 à 5, qualité pack. On te voit arriver de loin, ce qui est parfois le but.",
-        "Presque un convoi. La famille débarque quand tu tires sur le klaxon.",
-        "Tu es un nœud du pack. Ce qui roule pour toi ressemble à une armée de la route.",
-      ]
-    ),
+    background: `<p>Les Nomades descendent de familles chassées de leurs terres par l'expansion corpo, qui ont fait de la route leur nouveau foyer. Organisés en convois-familles de plusieurs dizaines à plusieurs centaines de membres, ils forment de véritables villes mobiles — avec leurs mécanos, leurs médecins, leurs enseignants — soudées par le sang, le mariage et une loyauté sans faille. Certains clans vivent du commerce légitime et des transports entre les zones que plus personne d'autre n'ose traverser ; d'autres pillent ou louent leurs armes aux corpos, sans jamais leur faire confiance pour autant. Même ceux qui s'installent en ville, souvent pour raisons professionnelles ou personnelles, restent fondamentalement attachés à leur famille et à la route.</p>`,
+    description: `<p>Le Nomade possède la capacité de rôle Convoi : une maîtrise des véhicules acquise dès l'enfance, et l'accès au parc automobile partagé de sa famille. À mesure qu'il progresse, il peut réclamer ou faire évoluer des véhicules de plus en plus perfectionnés, du modèle basique jusqu'aux montures blindées et lourdement armées des convois de premier plan.</p>`,
+    dTailCapacitSpCiale: `<p>Au rang 1, le Nomade roule sur une moto ou un véhicule d'entrée de gamme et connaît les routes de son territoire. Au rang 10, il commande ou a accès à une véritable flotte familiale — véhicules blindés, armement lourd inclus — et sa réputation sur les grands axes précède son convoi.</p>`,
   },
 ]
 
