@@ -1,68 +1,35 @@
-const path = require('path');
+const path = require("path")
+const { classes } = require("./src/data/classes")
+const { quartiers } = require("./src/data/quartiers")
+const { gangs } = require("./src/data/gangs")
 
-exports.createPages = ({ actions, graphql }) => {
-	const { createPage } = actions;
-  const ClasseTemplate = path.resolve(`src/templates/classes.js`);
-  const quartierTemplate = path.resolve ('src/templates/quartier.js');
+exports.createPages = ({ actions }) => {
+  const { createPage } = actions
+  const classeTemplate = path.resolve("src/templates/classes.js")
+  const quartierTemplate = path.resolve("src/templates/quartier.js")
+  const gangTemplate = path.resolve("src/templates/gang.js")
 
-	// Individual classe
-	const classe = graphql(`
-  {
-    allDatoCmsClasse  {
-      edges {
-        node {
-          slug
-        }
-      }
-    }
-  }
-  
-  `).then(result => {
-		if (result.errors) {
-			Promise.reject(result.errors);
-		}
+  classes.forEach(classe => {
+    createPage({
+      path: `/classes/${classe.slug}`,
+      component: classeTemplate,
+      context: { slug: classe.slug },
+    })
+  })
 
-		// Create product pages
-		result.data.allDatoCmsClasse.edges.forEach(({ node }) => {
-			createPage({
-        path: `classes/${node.slug}`,				
-        component: ClasseTemplate,         
-        context: {
-          slug: node.slug,
-        },
-			});
-		});
-	});
+  quartiers.forEach(quartier => {
+    createPage({
+      path: `/lore/quartiers/${quartier.slug}`,
+      component: quartierTemplate,
+      context: { slug: quartier.slug },
+    })
+  })
 
-	// Formations
-	const quartier = graphql(`
-		{
-			allDatoCmsQuartier  {
-        edges {
-          node  {
-					slug
-          }
-        }
-      }
-    }
-    
-	`).then(result => {
-		if (result.errors) {
-			Promise.reject(result.errors);
-		}
-
-		// Create atelier pages
-		result.data.allDatoCmsQuartier.edges.forEach(({ node }) => {
-			createPage({
-        path: `lore/quartiers/${node.slug}`,
-        component: quartierTemplate,
-        context: {slug: node.slug},
-			});
-		});
-	});
-
-
-
-	// Return a Promise which would wait for both the queries to resolve
-	return Promise.all([classe, quartier]);
-};
+  gangs.forEach(gang => {
+    createPage({
+      path: `/lore/gang/${gang.slug}`,
+      component: gangTemplate,
+      context: { slug: gang.slug },
+    })
+  })
+}

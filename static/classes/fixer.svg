@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Fixer">
+  <rect width="800" height="800" fill="#1a1008"/>
+  <circle cx="400" cy="400" r="310" fill="none" stroke="#f97316" stroke-width="8"/>
+  <circle cx="400" cy="300" r="110" fill="#e7c9b0"/>
+  <rect x="250" y="430" width="300" height="220" rx="40" fill="#431407"/>
+  <rect x="320" y="520" width="160" height="90" rx="12" fill="#111"/>
+  <text x="400" y="760" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="48" fill="#f97316">FIXER</text>
+</svg>

@@ -1,6 +1,6 @@
 /**
  * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
+ * Gatsby's useStaticQuery React hook
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, lang, meta, title }) {
+function Seo({ description, lang, meta, title, titleTemplate }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -27,6 +27,10 @@ function Seo({ description, lang, meta, title }) {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const resolvedTitleTemplate =
+    titleTemplate === null || title === defaultTitle
+      ? null
+      : titleTemplate || (defaultTitle ? `%s | ${defaultTitle}` : null)
 
   return (
     <Helmet
@@ -34,7 +38,7 @@ function Seo({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={resolvedTitleTemplate}
       meta={[
         {
           name: `description`,
@@ -42,7 +46,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: resolvedTitleTemplate ? resolvedTitleTemplate.replace("%s", title) : title,
         },
         {
           property: `og:description`,
@@ -62,7 +66,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: resolvedTitleTemplate ? resolvedTitleTemplate.replace("%s", title) : title,
         },
         {
           name: `twitter:description`,
@@ -74,9 +78,10 @@ function Seo({ description, lang, meta, title }) {
 }
 
 Seo.defaultProps = {
-  lang: `en`,
+  lang: `fr`,
   meta: [],
   description: ``,
+  titleTemplate: undefined,
 }
 
 Seo.propTypes = {
@@ -84,6 +89,7 @@ Seo.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  titleTemplate: PropTypes.string,
 }
 
 export default Seo

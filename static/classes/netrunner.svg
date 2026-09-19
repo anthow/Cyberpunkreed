@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Netrunner">
+  <defs>
+    <linearGradient id="bg" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#041016"/>
+      <stop offset="1" stop-color="#083344"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="55%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <circle cx="400" cy="320" r="280" fill="url(#glow)"/>
+  <circle cx="400" cy="400" r="310" fill="none" stroke="#22d3ee" stroke-width="8" opacity=".45"/>
+  <circle cx="400" cy="400" r="290" fill="none" stroke="#dc2626" stroke-width="4"/>
+  <rect x="245" y="430" width="310" height="220" rx="30" fill="#0f172a"/>
+  <circle cx="400" cy="300" r="112" fill="#e7c9b0"/>
+  <path d="M305 250c30-80 160-80 190 8-40 20-150 20-190-8z" fill="#111"/>
+  <rect x="250" y="270" width="300" height="70" rx="16" fill="#022c22" stroke="#22d3ee" stroke-width="6"/>
+  <rect x="270" y="292" width="260" height="14" fill="#22d3ee" opacity=".7"/>
+  <circle cx="300" cy="326" r="6" fill="#4ade80"/>
+  <circle cx="322" cy="326" r="6" fill="#facc15"/>
+  <circle cx="344" cy="326" r="6" fill="#dc2626"/>
+  <path d="M200 480c80 20 120 80 120 140" fill="none" stroke="#22d3ee" stroke-width="6"/>
+  <path d="M600 480c-80 20-120 80-120 140" fill="none" stroke="#22d3ee" stroke-width="6"/>
+  <rect x="330" y="500" width="140" height="90" rx="12" fill="#111" stroke="#facc15" stroke-width="3"/>
+  <path d="M350 530h100M350 555h70M350 575h85" stroke="#22d3ee" stroke-width="4"/>
+  <text x="400" y="760" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-size="36" fill="#22d3ee">NETRUNNER</text>
+</svg>

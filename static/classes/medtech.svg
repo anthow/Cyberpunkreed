@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Medtech">
+  <rect width="800" height="800" fill="#04120c"/>
+  <circle cx="400" cy="400" r="310" fill="none" stroke="#4ade80" stroke-width="8"/>
+  <circle cx="400" cy="300" r="110" fill="#e7c9b0"/>
+  <rect x="250" y="240" width="300" height="70" rx="12" fill="#ecfccb"/>
+  <rect x="250" y="430" width="300" height="220" rx="20" fill="#14532d"/>
+  <rect x="370" y="500" width="60" height="160" fill="#4ade80"/>
+  <rect x="320" y="545" width="160" height="60" fill="#4ade80"/>
+  <text x="400" y="760" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="42" fill="#4ade80">MEDTECH</text>
+</svg>

@@ -24,14 +24,12 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="bg-black ">
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+    <div className="bg-black min-h-screen">
+      <Header siteTitle={data.site.siteMetadata?.title || `Daily NightCity`} />
       <div>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <footer className="text-center text-gray-400 py-8 mt-16 border-t border-white/20">
+          © {new Date().getFullYear()} Daily NightCity — compagnon de campagne Cyberpunk Red
         </footer>
       </div>
     </div>

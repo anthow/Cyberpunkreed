@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Nomade">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1408"/>
+      <stop offset="1" stop-color="#3f2a12"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="55%">
+      <stop offset="0" stop-color="#fb923c" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#fb923c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <circle cx="400" cy="320" r="280" fill="url(#glow)"/>
+  <circle cx="400" cy="400" r="310" fill="none" stroke="#facc15" stroke-width="8" opacity=".35"/>
+  <circle cx="400" cy="400" r="290" fill="none" stroke="#fb923c" stroke-width="4"/>
+  <ellipse cx="400" cy="620" rx="210" ry="70" fill="#111" opacity=".5"/>
+  <path d="M220 520c40-90 320-90 360 0l-30 90H250z" fill="#1f1f1f"/>
+  <circle cx="400" cy="310" r="110" fill="#d2a679"/>
+  <path d="M290 250c40-70 180-70 220 0v70H290z" fill="#7c2d12"/>
+  <rect x="300" y="255" width="200" height="18" fill="#facc15"/>
+  <path d="M310 300h180v40c-20 40-160 40-180 0z" fill="#111" opacity=".55"/>
+  <circle cx="365" cy="318" r="8" fill="#111"/>
+  <circle cx="435" cy="318" r="8" fill="#111"/>
+  <rect x="150" y="540" width="180" height="70" rx="20" fill="#292524"/>
+  <circle cx="195" cy="610" r="36" fill="#111" stroke="#facc15" stroke-width="6"/>
+  <circle cx="285" cy="610" r="36" fill="#111" stroke="#facc15" stroke-width="6"/>
+  <text x="400" y="760" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-size="42" fill="#facc15">NOMADE</text>
+</svg>

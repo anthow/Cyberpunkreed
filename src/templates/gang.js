@@ -1,46 +1,30 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { graphql } from "gatsby";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { htmlToExcerpt } from "../utils/seo-text"
+const { getGang } = require("../data/gangs")
 
-const CLassePage  = ({ data })  => (
+const GangPage = ({ pageContext }) => {
+  const gang = getGang(pageContext.slug)
+  if (!gang) return null
 
-  <Layout>
-    <Seo title="Home" />
-   <article className=" w-10/12 m-auto space-x-20 flex justify-center text-white">
-   <article className=" w-10/12 m-auto space-x-20 flex justify-center text-white">
-   <GatsbyImage image={data.datoCmsQuartier.image.gatsbyImageData} className="w-1/2" />        
-
-  <section>
-  <h1 className=" text-3xl font-black text-red-600 ">{data.datoCmsQuartier.nom}</h1>
-  <h1 className=" text-2xl font-black text-yellow-600">{data.datoCmsQuartier.typeDeZone.nom}</h1>
-    <div className="w-10/12 mb-10" dangerouslySetInnerHTML={{ __html: data.datoCmsQuartier.description }} />
-
-   
-  </section>
-   </article>
-   </article>
-  </Layout>
-)
-
-export const query = graphql`
-query gangPageQuery($slug: String){
-    datoCmsGang(slug: {eq: $slug}) {
-    slug
-    description
-    nom
-    typeDeZone {
-      nom
-    }
-    image {
-      gatsbyImageData
-    }
-   
-  }
+  return (
+    <Layout>
+      <Seo
+        title={gang.nom}
+        titleTemplate="%s | Les Gangs"
+        description={htmlToExcerpt(gang.description) || `Fiche du gang ${gang.nom} pour Daily NightCity.`}
+      />
+      <article className="w-10/12 m-auto grid grid-cols-1 lg:grid-cols-2 gap-10 justify-center text-white">
+        {gang.imageSrc && <img src={gang.imageSrc} alt={gang.nom} className="w-full max-w-md mx-auto" />}
+        <section>
+          <h1 className="text-3xl font-black text-red-600">{gang.nom}</h1>
+          {gang.typeDeZone && <h2 className="text-2xl font-black text-yellow-600">{gang.typeDeZone}</h2>}
+          <div className="w-10/12 mb-10" dangerouslySetInnerHTML={{ __html: gang.description || "" }} />
+        </section>
+      </article>
+    </Layout>
+  )
 }
-`;
 
-
-export default CLassePage
+export default GangPage
